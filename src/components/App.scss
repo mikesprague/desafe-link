@@ -1,9 +1,23 @@
 .main-container {
-  background-position: unset !important;
-  background-position: top center !important;
+  background-position: center;
+  }
+  
+.main-container > * {
+  grid-column-start: 1;
+  grid-row-start: 1;
 }
 
-a.decoded-safe-link:before {
+.main-container-content {
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+a.decoded-safe-link::before {
   content: '🔗 ';
   margin-left: 0.5rem;
 }

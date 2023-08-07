@@ -1,4 +1,4 @@
-import { FaGithub, FaLink } from 'react-icons/fa';
+import { FaCircleXmark, FaGithub, FaLink } from 'react-icons/fa6';
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -50,11 +50,19 @@ export default function App() {
     };
   }, [safeLink]);
 
+  // const clearForm = () => {
+  //   document.getElementById('safe-link').value = '';
+  //   setDecodedUrl(defaultMessage);
+  //   setHasUrl(false);
+  // };
+
+  const resetPage = () => window.location.reload(true);
+
   return (
     <>
-      <div className="hero min-h-screen bg-base-200 w-full">
-        <div className="hero-content text-center w-full">
-          <div className="w-full">
+      <div className="main-container min-h-screen bg-base-200 w-full">
+        <div className="main-container-content text-center w-full">
+          <div className="w-full mt-8">
             <h1 className="text-5xl font-bold">
               desafe.link &nbsp;
               <FaLink />
@@ -67,9 +75,9 @@ export default function App() {
                 <div className="form-control items-center">
                   <textarea
                     id="safe-link"
-                    className=" textarea textarea-md textarea-bordered w-full break-all"
+                    className=" textarea textarea-md textarea-bordered break-all"
                     placeholder="Enter a valid Microsoft Safe Link"
-                    style={{ minHeight: '8rem', maxHeight: '50%' }}
+                    style={{ minHeight: '8rem', maxHeight: '50%', width: '80%' }}
                     onChange={(e) => {
                       e.target.value = e.target.value.trim();
                     }}
@@ -78,14 +86,19 @@ export default function App() {
                   <label className="label">
                     <span className="decoded-url label-text text-lg">
                       {hasUrl && decodedUrl ? (
-                        <a
-                          href={decodedUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="decoded-safe-link text-primary"
-                        >
-                          {decodedUrl}
-                        </a>
+                        <>
+                          <a
+                            href={decodedUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="decoded-safe-link text-primary"
+                          >
+                            {decodedUrl}
+                          </a>
+                          <a onClick={(e) => resetPage()} className="ml-5 text-sm text-red-600" title="Clear form">
+                            <FaCircleXmark />
+                          </a>
+                        </>
                       ) : (
                         `${decodedUrl}`
                       )}
