@@ -1,0 +1,9 @@
+.main-container {
+  background-position: unset !important;
+  background-position: top center !important;
+}
+
+a.decoded-safe-link:before {
+  content: '🔗 ';
+  margin-left: 0.5rem;
+}
