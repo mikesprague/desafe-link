@@ -8,6 +8,31 @@ Microsoft Safe Link Unfurler
 
 Simple app that extracts the source URL from a Microsoft Safe Link
 
+### Running Locally
+
+1. Clone repo `git clone https://github.com/mikesprague/desafe-link.git`
+1. Enter directory `cd desafe-link`
+1. Install dependencies `npm install`
+1. Run project locally `npm start`
+1. Visit [`http://localhost:5173`](http://localhost:5173) in your browser
+
+### Uses
+
+- [React](https://react.dev/)
+  - JavaScript framework
+- [Tailwind CSS](https://tailwindcss.com/)
+  - CSS famework
+- [daisyUI](https://daisyui.com/)
+  - Component library for Tailwind CSS
+- [Vite](https://vitejs.dev/) / [VIte PWA](https://vite-pwa-org.netlify.app/)
+  - Frontend build tooling
+- [GitHub Pages](https://docs.github.com/en/pages)
+  - Hosting
+- [GitHub Actions/Workflows](https://github.com/GoogleChrome/lighthouse)
+  - Build/publish to GH Pages
+  - Dependency updates
+  - Page speed tests with [Lighthouse](https://github.com/GoogleChrome/lighthouse)
+
 ## Disclaimers
 
 This is NOT official Microsoft software. I have NO affiliation with Microsoft.
