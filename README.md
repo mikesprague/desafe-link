@@ -4,6 +4,13 @@
 
 Microsoft Safe Link Unfurler
 
+## Disclaimer
+
+This is NOT official Microsoft software. I have NO affiliation with Microsoft.
+
+All trademarks are property of their respective owners.
+
+
 ## About
 
 Simple app that extracts the source URL from a Microsoft Safe Link
@@ -14,7 +21,7 @@ Simple app that extracts the source URL from a Microsoft Safe Link
 1. Enter directory `cd desafe-link`
 1. Install dependencies `npm install`
 1. Run project locally `npm start`
-1. Visit [`http://localhost:5173`](http://localhost:5173) in your browser
+1. Visit `http://localhost:5173` in your browser
 
 ### Uses
 
@@ -32,12 +39,6 @@ Simple app that extracts the source URL from a Microsoft Safe Link
   - Build/publish to GH Pages
   - Dependency updates
   - Page speed tests with [Lighthouse](https://github.com/GoogleChrome/lighthouse)
-
-## Disclaimers
-
-This is NOT official Microsoft software. I have NO affiliation with Microsoft.
-
-All trademarks are property of their respective owners.
 
 ## License
 
