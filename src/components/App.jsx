@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import './App.scss';
 
 export default function App() {
-  const { register, watch } = useForm();
+  const { register, resetField, setFocus, watch } = useForm();
 
   const safeLink = watch('safe-link');
   // https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fstore.apple.com%2Fus%2Fxc%2Fhome&data=05%7C01%7Credacted%40redacted.email%7Cfa8be8e34881447e130408db97167730%7C5d7e43661b9b45cf8e79b14b27df46e1%7C0%7C0%7C638269894974647458%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=1r35qXl57%2FPUyyWK7yJSSsOVoo4E3Vs2btacsYp6uLc%3D&reserved=0
@@ -13,6 +13,7 @@ export default function App() {
   const defaultMessage = 'Enter a valid Microsoft Safe Link above';
   const [decodedUrl, setDecodedUrl] = useState(defaultMessage);
   const [hasUrl, setHasUrl] = useState(false);
+  const { onChange, onBlur, name, ref } = register('safe-link', { required: true });
 
   useEffect(() => {
     if (safeLink) {
@@ -43,20 +44,22 @@ export default function App() {
       setDecodedUrl(defaultMessage);
     }
 
+    setFocus('safe-link');
+
     // eslint-disable-next-line consistent-return
     return () => {
       setDecodedUrl(defaultMessage);
       setHasUrl(false);
     };
-  }, [safeLink]);
+  }, [safeLink, setFocus]);
 
-  // const clearForm = () => {
-  //   document.getElementById('safe-link').value = '';
-  //   setDecodedUrl(defaultMessage);
-  //   setHasUrl(false);
-  // };
+  const clearForm = () => {
+    setDecodedUrl(defaultMessage);
+    setHasUrl(false);
+    resetField('safe-link');
+  };
 
-  const resetPage = () => window.location.reload(true);
+  // const resetPage = () => window.location.reload(true);
 
   return (
     <>
@@ -71,41 +74,46 @@ export default function App() {
               <small className="text-lg font-bold text-center">Microsoft Safe Link Unfurler</small>
             </h2>
             <div className="mt-8">
-              <form className="safe-link-form text-center">
-                <div className="form-control items-center">
-                  <textarea
-                    id="safe-link"
-                    className=" textarea textarea-md textarea-bordered break-all"
-                    placeholder="Enter a valid Microsoft Safe Link"
-                    style={{ minHeight: '8rem', maxHeight: '50%', width: '80%' }}
-                    onChange={(e) => {
-                      e.target.value = e.target.value.trim();
-                    }}
-                    {...register('safe-link', { required: true })}
-                  />
-                  <label className="label">
-                    <span className="decoded-url label-text text-lg">
-                      {hasUrl && decodedUrl ? (
-                        <>
-                          <a
-                            href={decodedUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="decoded-safe-link text-primary"
-                          >
-                            {decodedUrl}
-                          </a>
-                          <a onClick={(e) => resetPage()} className="ml-5 text-sm text-red-600" title="Clear form">
-                            <FaCircleXmark />
-                          </a>
-                        </>
-                      ) : (
-                        `${decodedUrl}`
-                      )}
-                    </span>
-                  </label>
-                </div>
-              </form>
+              {/* <form className="safe-link-form text-center"> */}
+              <div className="form-control items-center">
+                <textarea
+                  id="safe-link"
+                  className=" textarea textarea-md textarea-bordered break-all w-full"
+                  placeholder="Enter a valid Microsoft Safe Link"
+                  style={{ minHeight: '8rem', maxHeight: '50%' }}
+                  name={name}
+                  ref={ref}
+                  onChange={onChange}
+                  onBlur={onBlur}
+                />
+                <label className="label">
+                  <span className="decoded-url label-text text-lg break-all">
+                    {hasUrl && decodedUrl ? (
+                      <>
+                        <a
+                          href={decodedUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="decoded-safe-link text-accent"
+                        >
+                          {decodedUrl}
+                        </a>
+                        <button
+                          type="button"
+                          onClick={() => clearForm()}
+                          className="ml-5 text-sm text-red-600 cursor-pointer"
+                          title="Clear form"
+                        >
+                          <FaCircleXmark />
+                        </button>
+                      </>
+                    ) : (
+                      `${decodedUrl}`
+                    )}
+                  </span>
+                </label>
+              </div>
+              {/* </form> */}
             </div>
           </div>
         </div>
