@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import './App.scss';
+import { emojisplosion } from 'emojisplosion';
 
 export default function App() {
   const { register, resetField, setFocus, watch } = useForm();
@@ -34,10 +35,17 @@ export default function App() {
         if (targetUrl) {
           setDecodedUrl(decodeURIComponent(targetUrl));
           setHasUrl(true);
+          emojisplosion({
+            position: {
+              x: 250,
+              y: 100,
+            },
+          });
         } else {
           setDecodedUrl("ERROR: Couldn't find target URL");
         }
       } catch (error) {
+        console.log(error);
         setDecodedUrl("ERROR: Couldn't decode URL");
       }
     } else {
@@ -86,6 +94,7 @@ export default function App() {
                   onChange={onChange}
                   onBlur={onBlur}
                 />
+                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                 <label className="label">
                   <span className="decoded-url label-text text-lg break-all">
                     {hasUrl && decodedUrl ? (
