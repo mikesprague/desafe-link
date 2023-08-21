@@ -37,7 +37,7 @@ export default function App() {
           setHasUrl(true);
           emojisplosion({
             position: {
-              x: 250,
+              x: 200,
               y: 100,
             },
           });
