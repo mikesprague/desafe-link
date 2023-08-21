@@ -9,7 +9,7 @@ import './App.scss';
 export default function App() {
   const { register, resetField, setFocus, watch } = useForm();
   const [emojiCount, setEmojiCount] = useLocalStorageState('emojiCount', {
-    defaultValue: 0,
+    defaultValue: 1,
   });
 
   const safeLink = watch('safe-link');
