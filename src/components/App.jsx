@@ -1,7 +1,7 @@
-import { FaCircleXmark, FaGithub, FaLink } from 'react-icons/fa6';
-import React, { useEffect, useState } from 'react';
 import { emojisplosion } from 'emojisplosion';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { FaCircleXmark, FaGithub, FaLink } from 'react-icons/fa6';
 import useLocalStorageState from 'use-local-storage-state';
 
 import './App.scss';
