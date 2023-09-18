@@ -1,6 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable global-require */
-
 module.exports = {
   extends: ['stylelint-config-standard-scss', 'stylelint-config-standard'],
   rules: {

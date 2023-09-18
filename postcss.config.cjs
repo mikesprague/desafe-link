@@ -1,7 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-undef */
-/* eslint-disable global-require */
-
 module.exports = {
   plugins: [
     require('autoprefixer'),
@@ -10,7 +6,11 @@ module.exports = {
       preset: 'default',
     }),
     require('@fullhuman/postcss-purgecss')({
-      content: ['./src/index.html', './src/index.js', './src/components/**/*.jsx'],
+      content: [
+        './src/index.html',
+        './src/index.js',
+        './src/components/**/*.jsx',
+      ],
       fontFace: false,
       safelist: [],
     }),

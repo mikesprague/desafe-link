@@ -18,7 +18,9 @@ export default function App() {
   const defaultMessage = 'Enter a valid Microsoft Safe Link above';
   const [decodedUrl, setDecodedUrl] = useState(defaultMessage);
   const [hasUrl, setHasUrl] = useState(false);
-  const { onChange, onBlur, name, ref } = register('safe-link', { required: true });
+  const { onChange, onBlur, name, ref } = register('safe-link', {
+    required: true,
+  });
 
   useEffect(() => {
     if (safeLink) {
@@ -85,7 +87,9 @@ export default function App() {
               <FaLink />
             </h1>
             <h2 className="my-2 text-2xl font-semibold leading-tight text-center">
-              <small className="text-lg font-bold text-center">Microsoft Safe Link Unfurler</small>
+              <small className="text-lg font-bold text-center">
+                Microsoft Safe Link Unfurler
+              </small>
             </h2>
             <div className="mt-8">
               {/* <form className="safe-link-form text-center"> */}
@@ -134,7 +138,11 @@ export default function App() {
         </div>
       </div>
       <div className="fixed min-w-full text-base text-center bottom-2">
-        <a href="https://github.com/mikesprague/desafe-link" rel="noopener noreferrer" target="_blank">
+        <a
+          href="https://github.com/mikesprague/desafe-link"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           <FaGithub size="2rem" />
         </a>
       </div>
