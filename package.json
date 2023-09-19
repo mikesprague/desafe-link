@@ -38,7 +38,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "7.46.1",
     "react-icons": "4.11.0",
-    "use-local-storage-state": "19.0.4"
+    "use-local-storage-state": "19.1.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.2.2",
