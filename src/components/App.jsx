@@ -22,6 +22,7 @@ export default function App() {
     required: true,
   });
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: creates almost infinite loop, not listed intentionally
   useEffect(() => {
     if (safeLink) {
       let url;
