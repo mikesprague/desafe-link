@@ -4,8 +4,8 @@
   "description": "Microsoft Safe Link Unfurler",
   "private": true,
   "engines": {
-    "node": ">= 18.x",
-    "npm": ">= 8.x"
+    "node": ">= 20.x",
+    "npm": ">= 10.x"
   },
   "type": "module",
   "scripts": {
@@ -60,7 +60,11 @@
     "vite-plugin-pwa": "0.19.2"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -71,5 +75,9 @@
     "commitizen": {
       "path": "./node_modules/cz-git"
     }
+  },
+  "volta": {
+    "node": "21.6.2",
+    "npm": "10.5.0"
   }
 }
