@@ -1,5 +1,5 @@
-import { emojisplosion } from 'emojisplosion';
-import React, { useEffect, useState } from 'react';
+import { emojiBlast } from 'emoji-blast';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaCircleXmark, FaGithub, FaLink } from 'react-icons/fa6';
 import useLocalStorageState from 'use-local-storage-state';
@@ -30,6 +30,7 @@ export default function App() {
       try {
         url = new URL(safeLink);
       } catch (error) {
+        console.log(error);
         return;
       }
 
@@ -43,7 +44,7 @@ export default function App() {
           setEmojiCount(emojiCount + 1);
           setDecodedUrl(decodeURIComponent(targetUrl));
           setHasUrl(true);
-          emojisplosion({
+          emojiBlast({
             emojiCount,
             position: {
               x: 200,
