@@ -1,23 +1,28 @@
 import { emojiBlast } from 'emoji-blast';
-import { useEffect, useState } from 'react';
+import { atom, useAtom } from 'jotai';
+import { atomWithStorage } from 'jotai/utils';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaCircleXmark, FaGithub, FaLink } from 'react-icons/fa6';
-import useLocalStorageState from 'use-local-storage-state';
 
 import './App.scss';
 
+const defaultMessage = 'Enter a valid Microsoft Safe Link above';
+
+const emojiCountAtom = atomWithStorage(1);
+const decodedUrlAtom = atom(defaultMessage);
+const hasUrlAtom = atom(false);
+
 export default function App() {
   const { register, resetField, setFocus, watch } = useForm();
-  const [emojiCount, setEmojiCount] = useLocalStorageState('emojiCount', {
-    defaultValue: 1,
-  });
+  const [emojiCount, setEmojiCount] = useAtom(emojiCountAtom);
 
   const safeLink = watch('safe-link');
   // https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fstore.apple.com%2Fus%2Fxc%2Fhome&data=05%7C01%7Credacted%40redacted.email%7Cfa8be8e34881447e130408db97167730%7C5d7e43661b9b45cf8e79b14b27df46e1%7C0%7C0%7C638269894974647458%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=1r35qXl57%2FPUyyWK7yJSSsOVoo4E3Vs2btacsYp6uLc%3D&reserved=0
 
-  const defaultMessage = 'Enter a valid Microsoft Safe Link above';
-  const [decodedUrl, setDecodedUrl] = useState(defaultMessage);
-  const [hasUrl, setHasUrl] = useState(false);
+  const [decodedUrl, setDecodedUrl] = useAtom(decodedUrlAtom);
+  const [hasUrl, setHasUrl] = useAtom(hasUrlAtom);
+
   const { onChange, onBlur, name, ref } = register('safe-link', {
     required: true,
   });
