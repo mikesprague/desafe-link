@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaCircleXmark, FaGithub, FaLink } from 'react-icons/fa6';
 
-import './App.scss';
+import './App.css';
 
 const defaultMessage = 'Enter a valid Microsoft Safe Link above';
 
@@ -69,7 +69,6 @@ export default function App() {
 
     setFocus('safe-link');
 
-    // eslint-disable-next-line consistent-return
     return () => {
       setDecodedUrl(defaultMessage);
       setHasUrl(false);
@@ -82,8 +81,6 @@ export default function App() {
     resetField('safe-link');
   };
 
-  // const resetPage = () => window.location.reload(true);
-
   return (
     <>
       <div className="main-container min-h-screen bg-base-200 w-full">
@@ -91,7 +88,7 @@ export default function App() {
           <div className="w-full mt-8">
             <h1 className="text-5xl font-bold">
               desafe.link &nbsp;
-              <FaLink />
+              <FaLink className="inline" />
             </h1>
             <h2 className="my-2 text-2xl font-semibold leading-tight text-center">
               <small className="text-lg font-bold text-center">
@@ -99,7 +96,6 @@ export default function App() {
               </small>
             </h2>
             <div className="mt-8">
-              {/* <form className="safe-link-form text-center"> */}
               <div className="form-control items-center">
                 <textarea
                   id="safe-link"
@@ -111,7 +107,7 @@ export default function App() {
                   onChange={onChange}
                   onBlur={onBlur}
                 />
-                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                {/* biome-ignore lint/a11y/noLabelWithoutControl: <explanation> */}
                 <label className="label">
                   <span className="decoded-url label-text text-lg break-all">
                     {hasUrl && decodedUrl ? (
@@ -139,7 +135,6 @@ export default function App() {
                   </span>
                 </label>
               </div>
-              {/* </form> */}
             </div>
           </div>
         </div>
@@ -150,7 +145,7 @@ export default function App() {
           rel="noopener noreferrer"
           target="_blank"
         >
-          <FaGithub size="2rem" />
+          <FaGithub className="inline" size="2rem" />
         </a>
       </div>
     </>
