@@ -33,7 +33,7 @@
     "daisyui": "5.1.8",
     "dotenv": "17.2.2",
     "emoji-blast": "0.10.2",
-    "jotai": "2.13.1",
+    "jotai": "2.14.0",
     "prop-types": "15.8.1",
     "react": "19.1.1",
     "react-dom": "19.1.1",
