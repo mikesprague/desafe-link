@@ -30,7 +30,7 @@
   },
   "homepage": "https://mikesprague.github.io/desafe-link",
   "dependencies": {
-    "daisyui": "5.1.20",
+    "daisyui": "5.1.23",
     "dotenv": "17.2.2",
     "emoji-blast": "0.10.2",
     "jotai": "2.14.0",
