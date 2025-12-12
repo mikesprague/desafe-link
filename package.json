@@ -35,7 +35,7 @@
     "emoji-blast": "0.11.0",
     "jotai": "2.16.0",
     "prop-types": "15.8.1",
-    "react": "19.2.1",
+    "react": "19.2.3",
     "react-dom": "19.2.1",
     "react-hook-form": "7.68.0",
     "react-icons": "5.5.0"
