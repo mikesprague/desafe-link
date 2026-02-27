@@ -54,7 +54,7 @@ jobs:
         run: npm run build
 
       - name: 📦 Create and upload build artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: pwa-artifact
           path: 'build/'
