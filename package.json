@@ -56,6 +56,9 @@
     "vite-plugin-html": "3.2.2",
     "vite-plugin-pwa": "1.2.0"
   },
+  "overrides": {
+    "serialize-javascript": "^7.0.4"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
