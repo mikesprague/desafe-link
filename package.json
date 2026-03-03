@@ -4,9 +4,10 @@
   "description": "Microsoft Safe Link Unfurler",
   "private": true,
   "engines": {
-    "node": ">= 22.x",
-    "npm": ">= 10.x"
+    "node": ">= 24.x",
+    "npm": ">= 11.x"
   },
+  "packageManager": "npm@11.11.0",
   "type": "module",
   "scripts": {
     "build": "vite build",
@@ -73,7 +74,7 @@
     }
   },
   "volta": {
-    "node": "22.13.1",
-    "npm": "10.9.2"
+    "node": "24.14.0",
+    "npm": "11.11.0"
   }
 }
