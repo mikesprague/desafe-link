@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "0.5.19",
-    "@tailwindcss/vite": "4.2.4",
+    "@tailwindcss/vite": "^0.0.0-insiders",
     "@vitejs/plugin-react": "6.0.1",
     "cz-git": "1.13.0",
     "oxfmt": "0.48.0",
@@ -63,6 +63,7 @@
   "overrides": {
     "glob": "^13.0.6",
     "serialize-javascript": "^7.0.5",
+    "tailwindcss": "4.2.4",
     "vite": "8.0.10"
   },
   "browserslist": {
