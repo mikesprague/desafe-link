@@ -48,7 +48,7 @@
     "@tailwindcss/typography": "0.5.19",
     "@tailwindcss/vite": "^0.0.0-insiders",
     "@vitejs/plugin-react": "6.0.1",
-    "cz-git": "1.13.0",
+    "cz-git": "1.13.1",
     "oxfmt": "0.49.0",
     "oxlint": "1.63.0",
     "prettier": "3.8.3",
