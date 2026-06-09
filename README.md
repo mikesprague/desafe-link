@@ -10,7 +10,6 @@ This is NOT official Microsoft software. I have NO affiliation with Microsoft.
 
 All trademarks are property of their respective owners.
 
-
 ## About
 
 Simple app that extracts the source URL from a Microsoft Safe Link
@@ -25,16 +24,13 @@ Simple app that extracts the source URL from a Microsoft Safe Link
 
 ### Uses
 
+- [TypeScript](https://www.typescriptlang.org/)
 - [React](https://react.dev/)
-  - JavaScript framework
 - [Tailwind CSS](https://tailwindcss.com/)
-  - CSS famework
 - [daisyUI](https://daisyui.com/)
-  - Component library for Tailwind CSS
-- [Vite](https://vitejs.dev/) / [VIte PWA](https://vite-pwa-org.netlify.app/)
-  - Frontend build tooling
+- [Vite](https://vitejs.dev/) / [Vite PWA](https://vite-pwa-org.netlify.app/)
+- [Oxfmt](https://oxc.rs/docs/guide/usage/formatter) / [Oxlint](https://oxc.rs/docs/guide/usage/linter)
 - [GitHub Pages](https://docs.github.com/en/pages)
-  - Hosting
 - [GitHub Actions/Workflows](https://github.com/GoogleChrome/lighthouse)
   - Build/publish to GH Pages
   - Dependency updates
@@ -44,7 +40,7 @@ Simple app that extracts the source URL from a Microsoft Safe Link
 
 MIT License
 
-Copyright (c) 2023 Michael Sprague
+Copyright (c) 2026 Michael Sprague
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

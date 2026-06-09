@@ -2,6 +2,7 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
+
 import { version } from './package.json';
 
 export default defineConfig({
@@ -11,7 +12,6 @@ export default defineConfig({
   },
   publicDir: '../public',
   base: './',
-  outDir: './',
   appType: 'spa',
   plugins: [
     tailwindcss(),
@@ -30,6 +30,7 @@ export default defineConfig({
         name: 'desafe.link',
         short_name: 'desafe.link',
         description: 'Microsoft Safe Link Unfurler',
+        // @ts-ignore - version is injected from package.json, which is not typed
         version,
         icons: [
           {
@@ -94,7 +95,6 @@ export default defineConfig({
           },
         ],
         lang: 'en-US',
-        dir: 'auto',
         orientation: 'portrait',
         id: '/',
         scope: '/',
@@ -105,8 +105,7 @@ export default defineConfig({
       },
     }),
     react({
-      // Use React plugin in all .jsx files
-      include: './src/**/*.jsx',
+      include: './src/**/*.tsx',
     }),
   ],
 });

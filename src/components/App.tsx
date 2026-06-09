@@ -9,9 +9,9 @@ import './App.css';
 
 const defaultMessage = 'Enter a valid Microsoft Safe Link above';
 
-const emojiCountAtom = atomWithStorage(1);
-const decodedUrlAtom = atom(defaultMessage);
-const hasUrlAtom = atom(false);
+const emojiCountAtom = atomWithStorage<number>('count', 1);
+const decodedUrlAtom = atom<string>(defaultMessage);
+const hasUrlAtom = atom<boolean>(false);
 
 export default function App() {
   const { register, resetField, setFocus, watch } = useForm();
@@ -27,7 +27,6 @@ export default function App() {
     required: true,
   });
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: creates almost infinite loop, not listed intentionally
   useEffect(() => {
     if (safeLink) {
       let url;
@@ -73,6 +72,7 @@ export default function App() {
       setDecodedUrl(defaultMessage);
       setHasUrl(false);
     };
+    // oxlint-disable-next-line react-hooks/exhaustive-deps - creates almost infinite loop, not listed intentionally
   }, [safeLink, setFocus]);
 
   const clearForm = () => {
@@ -83,48 +83,47 @@ export default function App() {
 
   return (
     <>
-      <div className="main-container min-h-screen bg-base-200 w-full">
-        <div className="main-container-content text-center w-full">
-          <div className="w-full mt-8">
-            <h1 className="text-5xl font-bold">
+      <div className='main-container min-h-screen bg-base-200 w-full'>
+        <div className='main-container-content text-center w-full'>
+          <div className='w-full mt-8'>
+            <h1 className='text-5xl font-bold'>
               desafe.link &nbsp;
-              <FaLink className="inline" />
+              <FaLink className='inline' />
             </h1>
-            <h2 className="my-2 text-2xl font-semibold leading-tight text-center">
-              <small className="text-lg font-bold text-center">
+            <h2 className='my-2 text-2xl font-semibold leading-tight text-center'>
+              <small className='text-lg font-bold text-center'>
                 Microsoft Safe Link Unfurler
               </small>
             </h2>
-            <div className="mt-8">
-              <div className="form-control items-center">
+            <div className='mt-8'>
+              <div className='form-control items-center'>
                 <textarea
-                  id="safe-link"
-                  className=" textarea textarea-md textarea-bordered break-all w-full"
-                  placeholder="Enter a valid Microsoft Safe Link"
+                  id='safe-link'
+                  className=' textarea textarea-md textarea-bordered break-all w-full'
+                  placeholder='Enter a valid Microsoft Safe Link'
                   style={{ minHeight: '8rem', maxHeight: '50%' }}
                   name={name}
                   ref={ref}
                   onChange={onChange}
                   onBlur={onBlur}
                 />
-                {/* biome-ignore lint/a11y/noLabelWithoutControl: <explanation> */}
-                <label className="label">
-                  <span className="decoded-url label-text text-lg break-all">
+                <label className='label'>
+                  <span className='decoded-url label-text text-lg break-all'>
                     {hasUrl && decodedUrl ? (
                       <>
                         <a
                           href={decodedUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="decoded-safe-link text-accent"
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='decoded-safe-link text-accent'
                         >
                           {decodedUrl}
                         </a>
                         <button
-                          type="button"
+                          type='button'
                           onClick={() => clearForm()}
-                          className="ml-5 text-sm text-red-600 cursor-pointer"
-                          title="Clear form"
+                          className='ml-5 text-sm text-red-600 cursor-pointer'
+                          title='Clear form'
                         >
                           <FaCircleXmark />
                         </button>
@@ -139,13 +138,13 @@ export default function App() {
           </div>
         </div>
       </div>
-      <div className="fixed min-w-full text-base text-center bottom-2">
+      <div className='fixed min-w-full text-base text-center bottom-2'>
         <a
-          href="https://github.com/mikesprague/desafe-link"
-          rel="noopener noreferrer"
-          target="_blank"
+          href='https://github.com/mikesprague/desafe-link'
+          rel='noopener noreferrer'
+          target='_blank'
         >
-          <FaGithub className="inline" size="2rem" />
+          <FaGithub className='inline' size='2rem' />
         </a>
       </div>
     </>

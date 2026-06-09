@@ -2,7 +2,7 @@
   background-position: center;
 }
 
-.main-container >* {
+.main-container > * {
   grid-column-start: 1;
   grid-row-start: 1;
 }
