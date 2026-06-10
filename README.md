@@ -27,9 +27,9 @@ Simple app that extracts the source URL from a Microsoft Safe Link
 - [TypeScript](https://www.typescriptlang.org/)
 - [React](https://react.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [daisyUI](https://daisyui.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
 - [Vite](https://vitejs.dev/) / [Vite PWA](https://vite-pwa-org.netlify.app/)
-- [Oxfmt](https://oxc.rs/docs/guide/usage/formatter) / [Oxlint](https://oxc.rs/docs/guide/usage/linter)
+- [Oxc](https://oxc.rs/docs/guide/introduction.html) ([Oxfmt](https://oxc.rs/docs/guide/usage/formatter) / [Oxlint](https://oxc.rs/docs/guide/usage/linter))
 - [GitHub Pages](https://docs.github.com/en/pages)
 - [GitHub Actions/Workflows](https://github.com/GoogleChrome/lighthouse)
   - Build/publish to GH Pages

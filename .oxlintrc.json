@@ -10,12 +10,7 @@
     "node_modules/**",
     "public/**"
   ],
-  "plugins": [
-    "eslint",
-    "react",
-    "typescript",
-    "unicorn"
-  ],
+  "plugins": ["eslint", "react", "typescript", "unicorn"],
   "rules": {
     "curly": "error",
     "default-param-last": "error",

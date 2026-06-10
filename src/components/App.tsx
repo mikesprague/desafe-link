@@ -5,6 +5,9 @@ import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaCircleXmark, FaGithub, FaLink } from 'react-icons/fa6';
 
+import { Button } from '@/components/ui/button';
+import { Textarea } from '@/components/ui/textarea';
+
 import './App.css';
 
 const defaultMessage = 'Enter a valid Microsoft Safe Link above';
@@ -97,7 +100,7 @@ export default function App() {
             </h2>
             <div className='mt-8'>
               <div className='form-control items-center'>
-                <textarea
+                <Textarea
                   id='safe-link'
                   className=' textarea textarea-md textarea-bordered break-all w-full'
                   placeholder='Enter a valid Microsoft Safe Link'
@@ -109,28 +112,32 @@ export default function App() {
                 />
                 <label className='label'>
                   <span className='decoded-url label-text text-lg break-all'>
-                    {hasUrl && decodedUrl ? (
-                      <>
-                        <a
-                          href={decodedUrl}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                          className='decoded-safe-link text-accent'
-                        >
-                          {decodedUrl}
-                        </a>
-                        <button
-                          type='button'
-                          onClick={() => clearForm()}
-                          className='ml-5 text-sm text-red-600 cursor-pointer'
-                          title='Clear form'
-                        >
-                          <FaCircleXmark />
-                        </button>
-                      </>
-                    ) : (
-                      `${decodedUrl}`
-                    )}
+                    <span className='block mt-5'>
+                      {hasUrl && decodedUrl ? (
+                        <>
+                          <a
+                            href={decodedUrl}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='decoded-safe-link text-indigo-500 hover:text-indigo-800'
+                          >
+                            {decodedUrl}
+                          </a>
+                          <Button
+                            size='icon'
+                            aria-label='Clear form'
+                            onClick={() => clearForm()}
+                            className='ml-5 hover:bg-none hover:text-red-600 text-red-600 cursor-pointer'
+                            title='Clear form'
+                            variant='ghost'
+                          >
+                            <FaCircleXmark />
+                          </Button>
+                        </>
+                      ) : (
+                        `${decodedUrl}`
+                      )}
+                    </span>
                   </span>
                 </label>
               </div>
