@@ -59,7 +59,7 @@ export default function App() {
             },
           });
         } else {
-          setDecodedUrl("ERROR: Couldn't find target URL");
+          setDecodedUrl("ERROR: Can't find Safe Link in URL");
         }
       } catch (error) {
         console.log(error);
