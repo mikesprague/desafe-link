@@ -41,7 +41,7 @@
     "clsx": "2.1.1",
     "dotenv": "17.4.2",
     "emoji-blast": "0.11.0",
-    "jotai": "2.20.1",
+    "jotai": "2.20.2",
     "lucide-react": "1.24.0",
     "radix-ui": "1.6.2",
     "react": "19.2.7",
