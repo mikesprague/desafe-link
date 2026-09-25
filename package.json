@@ -40,7 +40,7 @@
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "dotenv": "18.0.2",
-    "emoji-blast": "0.11.0",
+    "emoji-blast": "0.11.1",
     "jotai": "3.0.0",
     "lucide-react": "1.47.0",
     "radix-ui": "1.6.7",
