@@ -42,7 +42,7 @@
     "dotenv": "18.0.10",
     "emoji-blast": "0.12.0",
     "jotai": "3.0.2",
-    "lucide-react": "1.70.0",
+    "lucide-react": "1.71.0",
     "radix-ui": "1.8.1",
     "react": "19.3.1",
     "react-dom": "19.3.1",
